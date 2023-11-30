@@ -1,0 +1,23 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+medical_df = pd.read_csv('C:\pythonhomework\diabetes_prediction_dataset.csv')
+
+medical_df.head()
+
+medical_df['hypertension'] = medical_df['hypertension']. replace (0, 'no')
+medical_df['hypertension'] = medical_df['hypertension']. replace (1,'yes')
+
+medical_df.head()
+
+#medical_df.info()
+
+#medical_df['age'].plot.hist()
+    #plt.title('Histogram for age')
+    #plt.xlabel('age')
+    #plt.ylabel('Frequency')
+    #plt.show()
+
+medical_df['smoking_history'].value_counts().plot.pie(autopct='%1.1f%%')
+plt.title('Pie Chart for smoking history')
+plt.show()
